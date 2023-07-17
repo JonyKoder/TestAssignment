@@ -19,6 +19,7 @@ namespace Application.Entityframeworkcore
         }
       
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

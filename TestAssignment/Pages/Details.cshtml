@@ -1,0 +1,37 @@
+﻿@page
+@model TestAssignment.Pages.Details
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Company</h1>
+        <form asp-page="EditCompany" method="post">
+            <div class="form-group">
+                <input asp-for="@Model.Company.Id" hidden type="text" class="form-control" id="name" value="@Model.Company.Id">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input asp-for="@Model.Company.Name" type="text" class="form-control" id="name" value="@Model.Company.Name">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input asp-for="@Model.Company.City" type="text" class="form-control" id="city" value="@Model.Company.City">
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input asp-for="@Model.Company.State" type="text" class="form-control" value="@Model.Company.State" id="state">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input asp-for="@Model.Company.Phone" type="text" class="form-control" value="@Model.Company.Phone" id="phone">
+            </div>
+            <button type="submit"  class="btn btn-primary">Save</button>
+        </form>
+    </div>
+   
+</body>
+
+</html>

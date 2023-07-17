@@ -13,5 +13,6 @@ namespace Application.Domain
         public string City { get; set;}
         public string State { get; set;}
         public string Phone { get; set;}
+        public ICollection<Employee> Employees { get;}
     }
 }
