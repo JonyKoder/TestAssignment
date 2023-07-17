@@ -1,6 +1,7 @@
 
 using Application.Entityframeworkcore;
 using Application.Entityframeworkcore.CompanyServices;
+using Application.Entityframeworkcore.EmployeeServices;
 using Application.Entityframeworkcore.Interfaces;
 using Application.Entityframeworkcore.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ public class Program
 
         builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
         builder.Services.AddTransient<ICompanyService, CompanyService>();
+        builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+        builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
