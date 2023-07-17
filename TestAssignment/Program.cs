@@ -1,15 +1,28 @@
 
-using TestAssignment;
+using Application.Entityframeworkcore;
+using Application.Entityframeworkcore.CompanyServices;
+using Application.Entityframeworkcore.Interfaces;
+using Application.Entityframeworkcore.Repository;
+using Microsoft.EntityFrameworkCore;
+
 public class Program
 {
-
+    public IConfiguration Configuration { get; }
+    public Program(IConfiguration configuration)
+    {
+        Configuration = configuration;
+    }
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+      
         // Add services to the container.
         builder.Services.AddRazorPages();
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseNpgsql("Host=localhost;Port=5432;Database=AssingmentDb;User ID=root;Password=myPassword;Include Error Detail=true;"));
 
+        builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
+        builder.Services.AddTransient<ICompanyService, CompanyService>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -32,15 +45,10 @@ public class Program
        
 
         app.Run();
-        CreateHostBuilder(args).Build().Run();
+       
 
     }
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
+   
 }
 

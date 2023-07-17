@@ -20,7 +20,8 @@ namespace Application.Entityframeworkcore.Repository
 
         public async Task<IEnumerable<Company>> GetAllAsync()
         {
-            return await _context.Companies.ToListAsync();
+            var res = _context.Companies.ToList();
+            return res;
         }
 
         public async Task<Company> GetByIdAsync(int id)

@@ -9,6 +9,10 @@ namespace Application.DTO.Dtos
 {
     public class CompanyDto
     {
+        public CompanyDto()
+        {
+
+        }
         public CompanyDto(int id, string name, string city, string state, string phone)
         {
             Id = id;

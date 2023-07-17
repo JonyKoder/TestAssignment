@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssignment", "TestAssignment\TestAssignment.csproj", "{8CFBFD00-C667-4D73-8778-8BDB12E0D9DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssignment", "TestAssignment\TestAssignment.csproj", "{8CFBFD00-C667-4D73-8778-8BDB12E0D9DE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3CED2D6A-76A7-4A7E-A479-9E8EC51A0168} = {3CED2D6A-76A7-4A7E-A479-9E8EC51A0168}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Domain", "Application.Domain\Application.Domain.csproj", "{EE92F33F-B8FA-416D-9FED-1D9863F429AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Domain", "Application.Domain\Application.Domain.csproj", "{EE92F33F-B8FA-416D-9FED-1D9863F429AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Entityframeworkcore", "Application.Entityframeworkcore\Application.Entityframeworkcore.csproj", "{BC09BB4F-3842-4061-B266-14E54BFA59B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Entityframeworkcore", "Application.Entityframeworkcore\Application.Entityframeworkcore.csproj", "{BC09BB4F-3842-4061-B266-14E54BFA59B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.DTO", "Application.DTO\Application.DTO.csproj", "{3CED2D6A-76A7-4A7E-A479-9E8EC51A0168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.DTO", "Application.DTO\Application.DTO.csproj", "{3CED2D6A-76A7-4A7E-A479-9E8EC51A0168}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EE92F33F-B8FA-416D-9FED-1D9863F429AE} = {EE92F33F-B8FA-416D-9FED-1D9863F429AE}
 	EndProjectSection
