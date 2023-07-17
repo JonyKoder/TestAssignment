@@ -29,11 +29,11 @@ public class Program
 
         app.MapRazorPages();
 
-        CreateHostBuilder(args).Build().Run();
+       
 
         app.Run();
+        CreateHostBuilder(args).Build().Run();
 
-        
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
