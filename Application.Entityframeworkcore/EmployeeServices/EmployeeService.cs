@@ -30,7 +30,7 @@ namespace Application.Entityframeworkcore.EmployeeServices
             return new Employee
             {
                 Id = companyDto.Id,
-                CompanyId = companyDto.EmployeeId,
+                CompanyId = companyDto.CompanyId,
                 BithDate = companyDto.BithDate,
                 FirstName = companyDto.FirstName,
                 LastName = companyDto.LastName,
@@ -62,5 +62,40 @@ namespace Application.Entityframeworkcore.EmployeeServices
 
             return dto;
         }
+
+        public async Task<EmployeeDto> GetByIdAsync(int id)
+        {
+            var dto = await _employeeRepository.GetByIdAsync(id);
+            var mapDto = MapToDto(dto);
+            return mapDto;
+        }
+
+        public async Task<bool> Create(EmployeeDto dto)
+        {
+            var employee = await _employeeRepository.Create(dto);
+            return employee != null;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var res = await _employeeRepository.GetByIdAsync(id);
+           
+            return true;
+        }
+
+        public async Task<EmployeeDto> Update(EmployeeDto dto)
+        {
+            var employee = await _employeeRepository.GetByIdAsync(dto.Id);
+            employee.Position = dto.Position;
+            employee.FirstName = dto.FirstName;
+            employee.LastName = dto.LastName;
+            employee.BithDate = dto.BithDate;
+            employee.CompanyId = dto.CompanyId;
+
+            var newDto = MapToDto(employee);
+            await _employeeRepository.UpdateAsync(dto.Id, newDto);
+            return newDto;
+        }
+        
     }
 }

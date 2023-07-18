@@ -11,5 +11,9 @@ namespace Application.Entityframeworkcore.EmployeeServices
     {
         Task<List<EmployeeDto>> GetListAsync();
         Task<List<EmployeeDto>> GetListByCompanyIdAsync(int companyId);
+        Task<EmployeeDto> GetByIdAsync(int id);
+        Task<bool> Create(EmployeeDto dto);
+        Task<EmployeeDto> Update(EmployeeDto dto);
+        Task<bool> DeleteAsync(int id);
     }
 }

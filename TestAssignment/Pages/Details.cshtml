@@ -7,6 +7,24 @@
 </head>
 <body>
     <style>
+
+        .left-div {
+            float: left;
+            width: 50%;
+        }
+
+        .right-div {
+            float: right;
+            width: 50%;
+        }
+
+       
+
+        .container {
+            width: 500px;
+            float: left;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -40,59 +58,67 @@
         }
     </style>
     <div class="container">
-        <h1>Edit Company</h1>
-        <form asp-page="Details" method="post">
-            <div class="form-group">
-                <input asp-for="@Model.Company.Id" hidden type="text" class="form-control" id="name" value="@Model.Company.Id">
-            </div>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input asp-for="@Model.Company.Name" type="text" class="form-control" id="name" value="@Model.Company.Name">
-            </div>
-            <div class="form-group">
-                <label for="city">City:</label>
-                <input asp-for="@Model.Company.City" type="text" class="form-control" id="city" value="@Model.Company.City">
-            </div>
-            <div class="form-group">
-                <label for="state">State:</label>
-                <input asp-for="@Model.Company.State" type="text" class="form-control" value="@Model.Company.State" id="state">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input asp-for="@Model.Company.Phone" type="text" class="form-control" value="@Model.Company.Phone" id="phone">
-            </div>
-            <button type="submit"  class="btn btn-primary">Save</button>
-        </form>
-    </div>
-    <div style="margin-top: 50px" class="container">
-        <span style="font-size: 20px">
-            Employee
-        </span>
-      
-        <table>
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>Position</th>
-                    <th>BirhDate</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var employee in Model.Employees)
-                {
+        <div class="left-div">
+            <h1>Details Company</h1>
+            <h1>@Model.Company.Name</h1>
+            <form asp-page="Details" method="post">
+                <div class="form-group">
+                    <input asp-for="@Model.Company.Id" hidden type="text" class="form-control" id="name" value="@Model.Company.Id">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input asp-for="@Model.Company.Name" type="text" class="form-control" id="name" value="@Model.Company.Name">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input asp-for="@Model.Company.City" type="text" class="form-control" id="city" value="@Model.Company.City">
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input asp-for="@Model.Company.State" type="text" class="form-control" value="@Model.Company.State" id="state">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input asp-for="@Model.Company.Phone" type="text" class="form-control" value="@Model.Company.Phone" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input asp-for="@Model.Company.Address" type="text" class="form-control" value="@Model.Company.Address" id="address">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div class="right-div">
+            <span style="font-size: 20px">
+                Employee
+            </span>
+
+            <table>
+                <thead>
                     <tr>
-                        <td>@employee.Id</td>
-                        <td><a href="/EditCompany?id=@employee.Id">@employee.FirstName</a></td>
-                        <td>@employee.LastName</td>
-                        <td>@employee.Position</td>
-                        <td>@employee.BithDate</td>
+                        <th>№</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Position</th>
+                        <th>BirhDate</th>
                     </tr>
-                }
-            </tbody>
+                </thead>
+                <tbody>
+                    @foreach (var employee in Model.Employees)
+                    {
+                        <tr>
+                            <td>@employee.Id</td>
+                            <td><a href="/EditEmployee?id=@employee.Id">@employee.FirstName</a></td>
+                            <td>@employee.LastName</td>
+                            <td>@employee.Position</td>
+                            <td>@employee.BithDate</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
-         </div>
+        </div>
+    </div>
+
 
 </body>
 

@@ -13,18 +13,20 @@ namespace Application.DTO.Dtos
         {
 
         }
-        public CompanyDto(int id, string name, string city, string state, string phone)
+        public CompanyDto(int id, string name, string city, string state, string phone, string address)
         {
             Id = id;
             Name = name;
             City = city;
             State = state;
             Phone = phone;
+            Address = address;
         }
         public int Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+        public string Address { get; set; }
         public string Phone { get; set; }
     }
 }

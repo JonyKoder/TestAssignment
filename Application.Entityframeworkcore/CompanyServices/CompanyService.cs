@@ -50,7 +50,7 @@ namespace Application.Entityframeworkcore.CompanyServices
 
         private CompanyDto MapToDto(Company company)
         {
-            return new CompanyDto(company.Id, company.CompanyName, company.City, company.State, company.Phone);
+            return new CompanyDto(company.Id, company.CompanyName, company.City, company.State, company.Phone, company.Address);
            
         }
 
@@ -62,7 +62,8 @@ namespace Application.Entityframeworkcore.CompanyServices
                 CompanyName = companyDto.Name,
                 City = companyDto.City,
                 Phone = companyDto.Phone,
-                State = companyDto.State
+                State = companyDto.State,
+                Address = companyDto.Address
             };
         }
     }

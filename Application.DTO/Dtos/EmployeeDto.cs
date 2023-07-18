@@ -12,18 +12,18 @@ namespace Application.DTO.Dtos
         {
         }
 
-        public EmployeeDto(int id, int employeeId , string firstName, string lastName, string bithDate, string position)
+        public EmployeeDto(int id, int companyId , string firstName, string lastName, string bithDate, string position)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             BithDate = bithDate;
             Position = position;
-            EmployeeId = employeeId;
+            CompanyId = companyId;
         }
 
         public int Id { get; set; }
-        public int EmployeeId { get; set; }
+        public int CompanyId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string BithDate { get; set; }
