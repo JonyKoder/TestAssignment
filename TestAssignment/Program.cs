@@ -1,4 +1,5 @@
 
+using Application.Domain;
 using Application.Entityframeworkcore;
 using Application.Entityframeworkcore.CompanyServices;
 using Application.Entityframeworkcore.EmployeeServices;
@@ -19,13 +20,14 @@ public class Program
       
         // Add services to the container.
         builder.Services.AddRazorPages();
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseNpgsql("Host=localhost;Port=5432;Database=AssingmentDb;User ID=root;Password=myPassword;Include Error Detail=true;"));
 
-        builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
-        builder.Services.AddTransient<ICompanyService, CompanyService>();
-        builder.Services.AddTransient<IEmployeeService, EmployeeService>();
-        builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseInMemoryDatabase("TestDb"));
+      
+        builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+        builder.Services.AddScoped<ICompanyService, CompanyService>();
+        builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+        builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

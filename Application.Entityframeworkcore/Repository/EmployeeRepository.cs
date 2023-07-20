@@ -39,6 +39,7 @@ namespace Application.Entityframeworkcore.Repository
 
         public async Task<List<Employee>> GetAllEmployees()
         {
+            SeedEmployees(_context);
             var res = _context.Employees.ToList();
             return res;
         }
@@ -68,6 +69,24 @@ namespace Application.Entityframeworkcore.Repository
             }
             _context.Employees.Update(employeeFind);
             return employeeFind;
+        }
+        public void SeedEmployees(ApplicationDbContext context)
+        {
+            var employees = new List<Employee>
+              {
+                new Employee { Id = 1, FirstName = "John", LastName = "Doe", BithDate = "01/01/1990", Position = "Manager", CompanyId = 1 },
+                new Employee { Id = 2, FirstName = "Jane", LastName = "Smith", BithDate = "02/02/1991", Position = "Supervisor", CompanyId = 1 },
+                new Employee { Id = 4, FirstName = "Soup", LastName = "First", BithDate = "03/03/1992", Position = "Employee", CompanyId = 2 },
+                new Employee { Id = 5, FirstName = "Nick", LastName = "Second", BithDate = "03/03/1992", Position = "Employee", CompanyId = 3 },
+                new Employee { Id = 6, FirstName = "Green", LastName = "One", BithDate = "03/03/1992", Position = "Employee", CompanyId = 3 }
+              };
+
+            foreach(var em in employees)
+            {
+                context.Employees.Add(em);
+                context.SaveChangesAsync();
+            }
+            
         }
     }
 }

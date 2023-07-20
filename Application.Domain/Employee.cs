@@ -16,4 +16,5 @@ namespace Application.Domain
         public int CompanyId { get; set; }
 
     }
+
 }
