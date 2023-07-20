@@ -78,15 +78,17 @@ namespace Application.Entityframeworkcore.Repository
                 new Employee { Id = 2, FirstName = "Jane", LastName = "Smith", BithDate = "02/02/1991", Position = "Supervisor", CompanyId = 1 },
                 new Employee { Id = 4, FirstName = "Soup", LastName = "First", BithDate = "03/03/1992", Position = "Employee", CompanyId = 2 },
                 new Employee { Id = 5, FirstName = "Nick", LastName = "Second", BithDate = "03/03/1992", Position = "Employee", CompanyId = 3 },
-                new Employee { Id = 6, FirstName = "Green", LastName = "One", BithDate = "03/03/1992", Position = "Employee", CompanyId = 3 }
+                new Employee { Id = 6, FirstName = "Green", LastName = "One", BithDate = "03/03/1992", Position = "Employee", CompanyId = 3 },
+                new Employee { Id = 7, FirstName = "Jane", LastName = "Smith", BithDate = "02/02/1991", Position = "Supervisor", CompanyId = 4 },
+                new Employee { Id = 8, FirstName = "Soup", LastName = "First", BithDate = "03/03/1992", Position = "Employee", CompanyId = 5 },
               };
 
-            foreach(var em in employees)
+            foreach (var em in employees)
             {
                 context.Employees.Add(em);
                 context.SaveChangesAsync();
             }
-            
+
         }
     }
 }
